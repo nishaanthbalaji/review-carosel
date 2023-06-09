@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="review" />
+    <title>review</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background-color: rgb(226, 226, 245);
+    }
+    .reviewHeading {
+      text-align: center;
+      font-size: 40px;
+      margin-top: 20px;
+    }
+    .a {
+      height: 5px;
+      width: 100px;
+      background-color: blue;
+      margin-top: 10px;
+    }
+    .line {
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      height: 500px;
+      background-color: white;
+      width: 80%;
+      margin-left: 130px;
+      margin-top: 50px;
+      padding-top: 30px;
+    }
+    .reviewcard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .clientImage {
+      border-radius: 50%;
+    }
+    .reviewerName {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .designation {
+      margin-top: 10px;
+      color: lightseagreen;
+    }
+    .icon {
+      display: flex;
+      margin-top: 30px;
+    }
+    .container p {
+      margin-top: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+      opacity: 0.8;
+    }
+    .random {
+      height: 35px;
+      width: 120px;
+      /* background-color: aqua; */
+      margin-top: 30px;
+      text-align: center;
+      padding-top: 10px;
+      border: 1px solid lightskyblue;
+      border-radius: 10px;
+    }
+    i {
+      color: lightseagreen;
+      font-size: 30px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  </style>
+  <body>
+    <h2 class="reviewHeading">Our Reviews</h2>
+    <div class="line">
+      <div class="a"></div>
+    </div>
+    <div class="container">
+      <div class="reviewcard">
+        <img
+          src="./one.jpg"
+          alt="one"
+          class="clientImage"
+          width="160px"
+          height="150px"
+        />
+        <p class="reviewerName">Megan Fox</p>
+        <p class="designation">Web Developer</p>
+        <p class="review">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore
+          ratione distinctio error hic. Necessitatibus facilis voluptatum ut est
+          exercitationem aut dicta consectetur eos commodi fuga, quibusdam sunt
+          debitis explicabo ipsum eligendi dolorum aliquid corrupti delectus at
+          saepe rem sed. Ratione temporibus deserunt expedita molestias magnam
+          dolore in sint facere ducimus.
+        </p>
+        <div class="icon">
+          <i class="fa-solid fa-chevron-left previous btn btn1"></i>
+          <i class="fa-solid fa-chevron-right next btn btn1"></i>
+        </div>
+        <div class="random btn btn1">Suprise me</div>
+      </div>
+    </div>
+    <script>
+      let review = [
+        {
+          id: 1,
+          name: "Megan fox",
+          job: "Web Developer",
+          img: "./one.jpg",
+          review:
+            "Websites play an integral role in sales and marketing. Having a bespoke website can elevate your online presence, helping you establish your brand’s credibility and increase business opportunities. Reach more people with a sophisticated website and work with a reliable web development partner.",
+        },
+        {
+          id: 2,
+          name: "Arshdeep",
+          job: "Web Developer",
+          img: "./two.jpg",
+          review:
+            "Websites play an integral role in sales and marketing. Having a  website can elevate your online presence, helping you establish your brand’s credibility and increase business opportunities. Reach more people with a sophisticated website and work with a reliable web development partner.",
+        },
+        {
+          id: 3,
+          name: "Susman",
+          job: "Web Developer",
+          img: "./three.jpg",
+          review:
+            "Websites play an integral role in sales and marketing. Having a bespoke website can  your online presence, helping you establish your brand’s credibility and increase business opportunities. Reach more people with a sophisticated website and work with a reliable web development partner.",
+        },
+
+        {
+          id: 4,
+          name: "Rithika",
+          job: "Web Developer",
+          img: "./four.jpg",
+          review:
+            "Websites play an integral role in sales . Having a bespoke website can elevate your online presence, helping you establish your brand’s credibility and increase business opportunities. Reach more people with a sophisticated website and work with a reliable web development partner.",
+        },
+        {
+          id: 5,
+          name: "Karishma",
+          job: "Web Developer",
+          img: "./five.jpg",
+          review:
+            " play an integral role in sales and marketing. Having a bespoke website can elevate your online presence, helping you establish your brand’s credibility and increase business opportunities. Reach more people with a sophisticated website and work with a reliable web development partner.",
+        },
+      ];
+      let name = document.querySelector(".reviewerName");
+      let image = document.querySelector(".clientImage");
+      let position = document.querySelector(".designation");
+      let reviewContent = document.querySelector(".review");
+      console.log(image);
+      let btn = document.querySelectorAll(".btn1");
+      console.log(btn);
+      let reviewBtn = document.querySelector(".random");
+      function addition() {
+        let slide = review[count];
+        console.log(slide);
+        name.textContent = slide.name;
+        console.log(slide.name);
+        position.textContent = slide.job;
+        image.src = slide.img;
+        console.log(slide.image);
+        reviewContent.textContent = slide.review;
+        console.log(slide.review);
+      }
+
+      let count = 0;
+      for (const butt of btn) {
+        console.log(butt);
+        butt.addEventListener("click", (e) => {
+          console.log(e);
+          console.log(e.currentTarget);
+          let clicked = e.currentTarget.classList;
+          console.log(clicked);
+
+          //next
+          if (clicked.contains("next")) {
+            count++;
+            if (count > review.length - 1) {
+              count = 0;
+            }
+          }
+          //previous
+
+          if (clicked.contains("previous")) {
+            count--;
+            if (count < 0) {
+              count = review.length - 1;
+            }
+          }
+
+          if (clicked.contains("random")) {
+            count = Math.floor(Math.random() * 5);
+          }
+
+          addition();
+        });
+      }
+      // reviewBtn.addEventListener("click", () => {
+      //   count = Math.floor(Math.random() * 5);
+      //   addition();
+      // });
+    </script>
+  </body>
+</html>
